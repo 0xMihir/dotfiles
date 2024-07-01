@@ -42,6 +42,7 @@ lfcd () {
 bindkey -s '^o' 'lfcd\n'
 bindkey -v
 bindkey "^R" history-incremental-search-backward
+bindkey "^S" history-incremental-search-forward
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 export KEYTIMEOUT=1
@@ -66,7 +67,3 @@ zle-line-init() {
 zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
-
-export EDITOR=nvim
-export VISUAL=nvim
-alias vi=nvim
