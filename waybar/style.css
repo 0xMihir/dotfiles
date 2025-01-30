@@ -1,0 +1,122 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: "Material Design Icons", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+window#waybar {
+    background: transparent;
+    margin: 4px;
+    padding: 4px;
+    transition-property: opacity;
+    color: white;
+}
+
+window {
+    margin: 4px;
+    padding: 4px;
+    /* font-weight: bold; */
+}
+
+#workspaces,
+#window {
+    background: #09090b;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+#window {
+    padding: 4px 8px;
+}
+
+window#waybar.empty #window {
+    background: transparent;
+}
+
+#workspaces button {
+    transition-property: border-color, background-color;
+    transition-duration: 0.5s;
+    border-radius: 4px;
+    padding: 0px 4px;
+    margin-right: 4px;
+    border: 1px solid #09090b;
+    color: white;
+}
+
+#workspaces button:last-child {
+    margin-right: 0px;
+}
+
+#workspaces button:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+#workspaces button.active {
+    background-color: white;
+    color: black;
+}
+
+#battery,
+#power-profiles-daemon {
+    margin-right: 4px;
+}
+
+#power-profiles-daemon.performance {
+  color: #dc2626;
+}
+
+#power-profiles-daemon.balanced {
+  color: #0284c7;
+}
+
+#power-profiles-daemon.power-saver {
+  color: #22c55e;
+}
+
+#pulseaudio, #bluetooth, #custom-gpu, #cpu, #memory {
+  margin-right: 4px;
+}
+
+#custom-gpu.warning {
+    color: #f97316;
+}
+
+#custom-gpu.critical { 
+    color: #ef4444;
+}
+
+
+.modules-right {
+    background: #09090b;
+    padding-left: 4px;
+    padding-right: 6px;
+    border-radius: 8px;
+}
+
+#battery.discharging.warning  {
+    background: #09090b;
+    color: #ea580c;
+}
+
+#battery.discharging.critical {
+    background: #09090b;
+    color: #ef4444;
+}
+
+/* #workspaces button { */
+/*   transition-property: border-color; */
+/*   transition-duration: 0.5s; */
+/*   border-radius: 4px; */
+/*   padding: 4px 8px; */
+/*   border: 2px solid black; */
+/* } */
+/**/
+/* #workspaces button:hover { */
+/*   border: 2px solid #ddd; */
+/* } */
+/**/
+/* #workspaces button.active { */
+/*   border: 2px solid white; */
+/* } */
+/**/
