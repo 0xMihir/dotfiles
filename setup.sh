@@ -15,3 +15,7 @@ mkdir -p "${HOME}/.local/share/zsh/plugins"
 if [[ ! -d "${HOME}/.local/share/zsh/plugins/fzf-tab" ]]; then
   git clone https://github.com/Aloxaf/fzf-tab "${HOME}/.local/share/zsh/plugins/fzf-tab"
 fi
+# Prezto loads external modules via init.zsh; fzf-tab ships fzf-tab.plugin.zsh
+if [[ ! -f "${HOME}/.local/share/zsh/plugins/fzf-tab/init.zsh" ]]; then
+  ln -s fzf-tab.plugin.zsh "${HOME}/.local/share/zsh/plugins/fzf-tab/init.zsh"
+fi
