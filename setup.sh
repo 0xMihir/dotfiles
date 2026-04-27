@@ -9,3 +9,9 @@ done
 
 mkdir -p "${HOME}/.config/nvim"
 cp -r nvim/* "${HOME}/.config/nvim"
+
+# Install fzf-tab plugin
+mkdir -p "${HOME}/.local/share/zsh/plugins"
+if [[ ! -d "${HOME}/.local/share/zsh/plugins/fzf-tab" ]]; then
+  git clone https://github.com/Aloxaf/fzf-tab "${HOME}/.local/share/zsh/plugins/fzf-tab"
+fi

@@ -17,6 +17,19 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# fzf-tab (must be loaded after compinit, i.e. after prezto)
+if [[ -f "${HOME}/.local/share/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh" ]]; then
+  source "${HOME}/.local/share/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh"
+fi
+
+# fzf key bindings and completion
+if [[ -f /usr/share/fzf/key-bindings.zsh ]]; then
+  source /usr/share/fzf/key-bindings.zsh
+fi
+if [[ -f /usr/share/fzf/completion.zsh ]]; then
+  source /usr/share/fzf/completion.zsh
+fi
+
 # Customize to your needs...
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -67,3 +80,8 @@ zle-line-init() {
 zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+
+# zoxide (smarter cd)
+if command -v zoxide &>/dev/null; then
+  eval "$(zoxide init zsh)"
+fi
